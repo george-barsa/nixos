@@ -18,6 +18,50 @@
 
   programs.firefox = {
     enable = true;
+
+    #  profiles = {
+    #    default.extensions = with nur.repos.rycee.firefox-addons; [
+    #      bitwarden
+    #      ublock-origin
+    #    ];
+    #  };
+
+    policies = {
+      DisablePocket = true;
+      DisableFirefoxAccounts = true;
+      DisableFormHistory = true;
+      DisplayBookmarksToolbar = "never";
+      
+      EnableTrackingProtection = {
+        Value = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+      };
+
+      FirefoxSuggest = {
+        WebSuggestions = false;
+        SponsoredSuggestions = false;
+        ImproveSuggest = false;
+      };
+
+      Homepage.StartPage = "none";
+      NewTabPage = false;
+      OfferToSaveLogins = false;
+      
+      SanitizeOnShutdown = {
+        Cache = true;
+        Cookies = true;
+        Downloads = false;
+        FormData = true;
+        History = false;
+        Sessions = true;
+        SiteSettings = true;
+        OfflineApps = true;
+      };      
+
+      # SearchEngines.Default = "ddg@search.mozilla.org";
+      SearchSuggestionsEnabled = false;
+    };
   };
 
   # This value determines the home Manager release that your
