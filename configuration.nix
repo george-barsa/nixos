@@ -86,9 +86,7 @@
     description = "george";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      git
-      vim
+      
     ];
   };
 
