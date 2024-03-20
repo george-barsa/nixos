@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/george";
 
   home.packages = with pkgs; [
-        
+    helix        
   ];
 
   programs.vim.enable = true;
@@ -19,23 +19,29 @@
   programs.firefox = {
     enable = true;
 
-    #  profiles = {
-    #    default.extensions = with nur.repos.rycee.firefox-addons; [
-    #      bitwarden
-    #      ublock-origin
-    #    ];
-    #  };
-
     policies = {
-      DisablePocket = true;
       DisableFirefoxAccounts = true;
+      DisableFirefoxStudies = true;
       DisableFormHistory = true;
+      DisablePocket = true;
+      DisableTelemetry = true;
       DisplayBookmarksToolbar = "never";
-      
+
       EnableTrackingProtection = {
         Value = true;
         Cryptomining = true;
         Fingerprinting = true;
+      };
+      
+      ExtensionSettings = {
+	      "uBlock0@raymondhill.net" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          installation_mode = "force_installed";
+        };
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
 
       FirefoxSuggest = {
@@ -47,6 +53,12 @@
       Homepage.StartPage = "none";
       NewTabPage = false;
       OfferToSaveLogins = false;
+
+      Preferences = {
+        "browser.contentblocking.category" = { 
+          Value = "strict"; 
+        };
+      };
       
       SanitizeOnShutdown = {
         Cache = true;
