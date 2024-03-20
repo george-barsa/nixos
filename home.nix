@@ -5,7 +5,10 @@
   home.homeDirectory = "/home/george";
 
   home.packages = with pkgs; [
-    helix        
+    helix
+    spotify
+    freerdp
+    discord
   ];
 
   programs.vim.enable = true;
