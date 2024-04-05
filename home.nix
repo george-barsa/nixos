@@ -9,6 +9,7 @@
     spotify
     freerdp
     discord
+    git-credential-manager
   ];
 
   programs.vim.enable = true;
