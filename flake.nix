@@ -14,7 +14,7 @@
     nixosConfigurations.nixos-thintop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./hosts/nixos-thintop/configuration.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
