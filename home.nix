@@ -10,6 +10,7 @@
     freerdp
     discord
     gh
+    alacritty
   ];
 
   programs.vim.enable = true;
