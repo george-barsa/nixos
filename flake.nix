@@ -10,9 +10,10 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.nixos-thintop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos-thintop/configuration.nix
         home-manager.nixosModules.home-manager {
@@ -24,6 +25,7 @@
     };
     nixosConfigurations.nixos-worktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos-worktop/configuration.nix
         home-manager.nixosModules.home-manager {
