@@ -9,7 +9,6 @@
     spotify
     freerdp
     discord
-    gh
     alacritty
   ];
 
