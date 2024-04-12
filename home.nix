@@ -10,6 +10,7 @@
     freerdp
     discord
     alacritty
+    obsidian
   ];
 
   programs.vim.enable = true;
