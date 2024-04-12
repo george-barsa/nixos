@@ -1,16 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "george";
   home.homeDirectory = "/home/george";
 
-  home.packages = with pkgs; [
-    helix
-    spotify
-    freerdp
-    discord
-    alacritty
-    obsidian
+  home.packages = [
+    pkgs.helix
+    pkgs.spotify
+    pkgs.freerdp
+    pkgs.discord
+    pkgs.alacritty
+    # inputs.nixpkgs-unstable.obsidian
   ];
 
   programs.vim.enable = true;
