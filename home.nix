@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   home.username = "george";
@@ -10,7 +10,7 @@
     pkgs.freerdp
     pkgs.discord
     pkgs.alacritty
-    # inputs.nixpkgs-unstable.obsidian
+    pkgs-unstable.obsidian
   ];
 
   programs.vim.enable = true;
