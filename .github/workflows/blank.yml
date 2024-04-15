@@ -15,11 +15,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: cachix/install-nix-action@v20
+      - uses: cachix/install-nix-action@v22
 
       - run: nix flake update
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Bump flake.lock
           branch: main
