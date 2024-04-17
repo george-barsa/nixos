@@ -10,7 +10,6 @@
     pkgs.freerdp
     pkgs.discord
     pkgs.alacritty
-    pkgs.gnome-solanum
     pkgs-unstable.obsidian
   ];
 
