@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/george";
 
   home.packages = [
-    pkgs.helix
+    pkgs.nil
     pkgs.spotify
     pkgs.freerdp
     pkgs.discord
@@ -13,12 +13,20 @@
     pkgs-unstable.obsidian
   ];
 
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   programs.vim.enable = true;
 
   programs.git = {
     enable = true;
     userName = "george-barsa";
     userEmail = "117371911+george-barsa@users.noreply.github.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 
   programs.firefox = {
@@ -66,8 +74,8 @@
       };
       
       SanitizeOnShutdown = {
-        Cache = true;
-        Cookies = true;
+        Cache = false;
+        Cookies = false;
         Downloads = false;
         FormData = true;
         History = false;
