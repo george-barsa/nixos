@@ -26,6 +26,7 @@
     userEmail = "117371911+george-barsa@users.noreply.github.com";
     extraConfig = {
       init.defaultBranch = "main";
+      core.editor = "hx";
     };
   };
 
