@@ -4,7 +4,12 @@
   home.username = "george";
   home.homeDirectory = "/home/george";
 
+  home.sessionVariables = {
+    EDITOR = "hx";
+  };
+
   home.packages = [
+    pkgs.helix
     pkgs.nil
     pkgs.spotify
     pkgs.freerdp
@@ -12,11 +17,6 @@
     pkgs.alacritty
     pkgs-unstable.obsidian
   ];
-
-  programs.helix = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   programs.vim.enable = true;
 
@@ -26,7 +26,6 @@
     userEmail = "117371911+george-barsa@users.noreply.github.com";
     extraConfig = {
       init.defaultBranch = "main";
-      core.editor = "hx";
     };
   };
 
