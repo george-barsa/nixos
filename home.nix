@@ -30,7 +30,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "sonokai";
+      theme = "base16_default";
     };
   };
 
