@@ -9,7 +9,6 @@
     pkgs.spotify
     pkgs.freerdp
     pkgs.discord
-    pkgs.starship
     pkgs-unstable.obsidian
   ];
 
