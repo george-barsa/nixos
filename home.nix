@@ -4,19 +4,25 @@
   home.username = "george";
   home.homeDirectory = "/home/george";
 
-  home.sessionVariables = {
-    EDITOR = "hx";
-  };
-
   home.packages = [
     pkgs.helix
     pkgs.nil
     pkgs.spotify
     pkgs.freerdp
     pkgs.discord
-    pkgs.alacritty
+    pkgs.kitty
+    pkgs.starship
     pkgs-unstable.obsidian
   ];
+
+  programs.bash = {
+    enable = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 
   programs.vim.enable = true;
 
