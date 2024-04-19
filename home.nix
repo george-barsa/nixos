@@ -5,12 +5,10 @@
   home.homeDirectory = "/home/george";
 
   home.packages = [
-    pkgs.helix
     pkgs.nil
     pkgs.spotify
     pkgs.freerdp
     pkgs.discord
-    pkgs.kitty
     pkgs.starship
     pkgs-unstable.obsidian
   ];
@@ -19,12 +17,22 @@
     enable = true;
   };
 
+  programs.kitty = {
+    enable = true;
+    theme = "Space Gray Eighties";  
+  };
+  
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
   };
 
-  programs.vim.enable = true;
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "sonokai";
+    };
+  };
 
   programs.git = {
     enable = true;
