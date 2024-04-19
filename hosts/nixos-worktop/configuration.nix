@@ -44,6 +44,10 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
