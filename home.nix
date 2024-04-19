@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/george";
 
   home.packages = [
+    pkgs.fzf
     pkgs.nil
     pkgs.spotify
     pkgs.freerdp
@@ -14,6 +15,9 @@
 
   programs.bash = {
     enable = true;
+    shellAliases = {
+      fcd = "cd $(find . -type d -print | fzf)";
+    };
   };
 
   programs.kitty = {
