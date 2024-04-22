@@ -19,40 +19,44 @@
       inherit system;
       config.allowUnfree = true;
     };
+    vars = {
+      user = "george";
+    };
+    hosts = [
+      "nixos-worktop"
+      "nixos-thintop"
+    ];
   in {
-    nixosConfigurations.nixos-thintop = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/nixos-thintop/configuration.nix
-        ./hosts/nixos-thintop/hardware-configuration.nix
-        ./modules/common.nix
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.george = import ./home.nix;
-            extraSpecialArgs = { inherit pkgs-unstable; };
+    nixosConfigurations = builtins.listToAttrs (
+      map (host: { 
+        name = host;
+        value = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { 
+            inherit inputs; 
+            inherit vars;
+            inherit host;
           };
-        }
-      ];
-    };
-    nixosConfigurations.nixos-worktop = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/nixos-worktop/configuration.nix
-        ./hosts/nixos-worktop/hardware-configuration.nix
-        ./modules/common.nix
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.george = import ./home.nix;
-            extraSpecialArgs = { inherit pkgs-unstable; };
-          };
-        }
-      ];
-    };
+          modules = [
+            ./hosts/${host}/configuration.nix
+            ./hosts/${host}/hardware-configuration.nix
+            ./modules/common.nix
+            home-manager.nixosModules.home-manager {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${vars.user} = import ./home.nix;
+                extraSpecialArgs = { 
+                  inherit pkgs-unstable;
+                  inherit vars;
+                  inherit host;
+                };            
+              };
+            }
+          ];
+        };
+      })
+      hosts
+    );
   };
 }

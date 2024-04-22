@@ -1,8 +1,8 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, vars,  ... }:
 
 {
-  home.username = "george";
-  home.homeDirectory = "/home/george";
+  home.username = "${vars.user}";
+  home.homeDirectory = "/home/${vars.user}";
 
   home.packages = [
     pkgs.fzf

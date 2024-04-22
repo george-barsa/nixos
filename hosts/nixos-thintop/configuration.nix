@@ -1,5 +1,5 @@
-{ ... }:
+{ host, ... }:
 
 {
-  networking.hostName = "nixos-thintop";
+  networking.hostName = "${host}";
 }

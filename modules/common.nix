@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, vars, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -79,9 +79,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.george = {
+  users.users.${vars.user} = {
     isNormalUser = true;
-    description = "george";
+    description = "${vars.user}";
     extraGroups = [ "networkmanager" "wheel" ];
     # packages = with pkgs; [
       
