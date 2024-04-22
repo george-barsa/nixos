@@ -25,6 +25,8 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos-thintop/configuration.nix
+        ./hosts/nixos-thintop/hardware-configuration.nix
+        ./modules/common.nix
         home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
@@ -40,6 +42,8 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos-worktop/configuration.nix
+        ./hosts/nixos-worktop/hardware-configuration.nix
+        ./modules/common.nix
         home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
