@@ -10,6 +10,7 @@
     pkgs.spotify
     pkgs.freerdp
     pkgs.discord
+    pkgs.logseq
     pkgs-unstable.obsidian
   ];
 
