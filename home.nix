@@ -1,17 +1,16 @@
-{ config, pkgs, pkgs-unstable, vars,  ... }:
+{ config, pkgs, vars,  ... }:
 
 {
   home.username = "${vars.user}";
   home.homeDirectory = "/home/${vars.user}";
 
-  home.packages = [
-    pkgs.fzf
-    pkgs.nil
-    pkgs.spotify
-    pkgs.freerdp
-    pkgs.discord
-    pkgs.logseq
-    pkgs-unstable.obsidian
+  home.packages = with pkgs; [
+    fzf
+    nil
+    spotify
+    freerdp
+    discord
+    logseq
   ];
 
   programs.bash = {
