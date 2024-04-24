@@ -10,7 +10,7 @@
     spotify
     freerdp
     discord
-    standardnotes
+    logseq
   ];
 
   programs.bash = {

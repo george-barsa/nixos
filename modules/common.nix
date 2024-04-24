@@ -106,6 +106,15 @@
     dedicatedServer.openFirewall = true;
   };
 
+  services = {
+    syncthing = {
+        enable = true;
+        user = "${vars.user}";
+        dataDir = "/home/${vars.user}/Documents";
+        configDir = "/home/${vars.user}/Documents/.config/syncthing";
+    };
+  };
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
