@@ -17,7 +17,8 @@
           "george-pixel6a" = { id = "PJ7UURK-ZSDAEF6-BCIX5LG-CAHDGO4-2B7NXKU-FNEHIVB-VHSWAZ4-JDNVBQZ"; };
         };
         folders = {
-          "logseq" = {
+          "07tdg-wgfb5" = {
+            label = "Logseq";
             path = "/home/${vars.user}/Documents/logseq";
             devices = [ "george-pixel6a" ];
           };
