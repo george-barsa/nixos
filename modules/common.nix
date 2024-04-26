@@ -2,9 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, vars, ... }:
+{ pkgs, inputs, vars, host, ... }:
 
 {
+  networking.hostName = "${host}";
+  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
@@ -106,15 +108,6 @@
     dedicatedServer.openFirewall = true;
   };
 
-  services = {
-    syncthing = {
-        enable = true;
-        user = "${vars.user}";
-        dataDir = "/home/${vars.user}/Documents";
-        configDir = "/home/${vars.user}/Documents/.config/syncthing";
-    };
-  };
-  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
