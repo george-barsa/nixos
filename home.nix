@@ -34,6 +34,7 @@
   programs.helix = {
     enable = true;
     settings = {
+      editor.line-number = "relative";
       theme = "base16_default";
     };
   };
