@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/${vars.user}";
 
   home.packages = with pkgs; [
+    fastfetch
     fzf
     nil
     spotify
@@ -34,8 +35,13 @@
   programs.helix = {
     enable = true;
     settings = {
-      editor.line-number = "relative";
-      theme = "base16_default";
+      editor = {
+        line-number = "relative";
+        color-modes = true;
+        true-color = true;
+        cursorline = true;
+      };
+      theme = "base16_transparent";
     };
   };
 
