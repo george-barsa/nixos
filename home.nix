@@ -1,4 +1,4 @@
-{ config, pkgs, vars,  ... }:
+{ pkgs, vars,  ... }:
 
 {
   home.username = "${vars.user}";
@@ -42,6 +42,9 @@
         color-modes = true;
         true-color = true;
         cursorline = true;
+        statusline = {
+          left = ["mode" "spinner" "version-control" "file-name" "read-only-indicator" "file-modification-indicator"];
+        };
       };
       theme = "github_dark";
     };
