@@ -21,6 +21,8 @@
     };
   };
 
+  programs.direnv.enable = true;
+
   programs.kitty = {
     enable = true;
     theme = "GitHub Dark";  
