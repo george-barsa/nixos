@@ -45,6 +45,12 @@
         statusline = {
           left = ["mode" "spinner" "version-control" "file-name" "read-only-indicator" "file-modification-indicator"];
         };
+        cursor-shape = {
+          insert = "bar";
+        };
+      };
+      keys.normal = {
+        esc = ["collapse_selection" "keep_primary_selection"];
       };
       theme = "gruvbox";
     };
