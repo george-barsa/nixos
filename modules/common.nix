@@ -174,11 +174,13 @@
 
   system.autoUpgrade = {
     enable = true;
-    flake = inputs.self.outPath;
+    flake = "github:george-barsa/nixos";
     flags = [
+      "--no-write-lock-file"
+      "--update-input" "nixpkgs"
       "--refresh -L" # print build logs
     ];
-    dates = "02:00";
+    dates = "2:00";
     randomizedDelaySec = "45min";
   };
 
