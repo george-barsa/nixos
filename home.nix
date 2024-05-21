@@ -12,6 +12,7 @@
     freerdp
     discord
     logseq
+    lazygit
   ];
 
   programs.bash = {
