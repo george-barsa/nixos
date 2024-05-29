@@ -12,6 +12,7 @@
     freerdp
     discord
     logseq
+    bitwig-studio
   ];
 
   programs.bash = {
