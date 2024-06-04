@@ -13,6 +13,9 @@
     discord
     logseq
     bitwig-studio
+    yabridge
+    wineWow64Packages.staging
+    yabridgectl
   ];
 
   programs.bash = {
