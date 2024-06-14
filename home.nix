@@ -14,6 +14,7 @@
     logseq
     bitwig-studio
     gimp
+    audacity
   ];
 
   programs.bash = {
