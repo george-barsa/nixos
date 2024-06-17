@@ -15,6 +15,7 @@
     bitwig-studio
     gimp
     audacity
+    tagger
   ];
 
   programs.bash = {
