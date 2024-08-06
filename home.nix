@@ -16,6 +16,7 @@
     gimp
     audacity
     tagger
+    lingot
   ];
 
   programs.bash = {
