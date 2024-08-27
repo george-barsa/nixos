@@ -17,6 +17,9 @@
     audacity
     tagger
     lingot
+    yabridge
+    yabridgectl
+    wineWowPackages.stable
   ];
 
   programs.bash = {
