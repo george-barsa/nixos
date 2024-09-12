@@ -11,7 +11,6 @@
     spotify
     freerdp
     discord
-    logseq
     bitwig-studio
     gimp
     audacity
