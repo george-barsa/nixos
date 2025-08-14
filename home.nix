@@ -11,7 +11,7 @@
     spotify
     freerdp
     discord
-    lmms
+    ardour
     bitwig-studio
     gimp
     audacity
