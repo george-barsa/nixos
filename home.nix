@@ -20,7 +20,6 @@
     yabridge
     yabridgectl
     wineWowPackages.stable
-    docker
   ];
 
   programs.bash = {
