@@ -147,6 +147,9 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 2222 8080 ];
+
   # Limit the number of generations to keep
   boot.loader.systemd-boot.configurationLimit = 10;
   # boot.loader.grub.configurationLimit = 10;
