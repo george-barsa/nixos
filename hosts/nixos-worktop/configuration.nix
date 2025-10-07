@@ -25,6 +25,7 @@
           --name gitea \
           -p 3000:3000 \
           -p 222:22 \
+          -e GITEA__server__ROOT_URL=http://192.168.0.101:3000/ \
           -v /home/${vars.user}/Documents/gitea:/data \
           gitea/gitea:latest
       '';
