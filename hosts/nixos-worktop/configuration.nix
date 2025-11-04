@@ -107,10 +107,10 @@
   };
 
   systemd.timers.gitea-backup = {
-    description = "Run Gitea backup nightly at 5 AM";
+    description = "Run Gitea backup weekly";
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "*-*-* 05:00:00";
+      OnCalendar = "weekly";
       Persistent = true;
     };
   };
