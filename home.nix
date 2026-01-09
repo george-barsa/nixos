@@ -20,6 +20,7 @@
     yabridge
     yabridgectl
     wineWowPackages.stable
+    obsidian
   ];
 
   programs.bash = {
