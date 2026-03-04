@@ -20,8 +20,8 @@
     yabridge
     yabridgectl
     wineWowPackages.stable
-    obsidian,
-    reaper,
+    obsidian
+    reaper
     reaper-reapack-extension
   ];
 
