@@ -20,7 +20,9 @@
     yabridge
     yabridgectl
     wineWowPackages.stable
-    obsidian
+    obsidian,
+    reaper,
+    reaper-reapack-extension
   ];
 
   programs.bash = {
