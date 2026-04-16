@@ -107,6 +107,7 @@
   };
 
   systemd.timers.gitea-backup = {
+    enable = false;
     description = "Run Gitea backup weekly";
     wantedBy = [ "timers.target" ];
     timerConfig = {
