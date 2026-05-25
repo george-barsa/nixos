@@ -8,6 +8,13 @@
     pkgs.unzip
   ];
 
+  services.tlp.enable = true;
+
+  services.tlp.settings = {
+    START_CHARGE_THRESH_BAT0 = 60;
+    STOP_CHARGE_THRESH_BAT0 = 80;
+  };
+
   virtualisation = {
     docker = {
       enable = true;
