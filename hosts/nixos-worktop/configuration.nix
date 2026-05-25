@@ -48,6 +48,7 @@
   };
 
   systemd.services.gitea-backup = {
+    restartIfChanged = false;
     description = "Nightly Gitea backup with incremental OneDrive sync";
 
     path = [
