@@ -11,15 +11,10 @@
     spotify
     freerdp
     discord
-    ardour
-    bitwig-studio
     gimp
     audacity
     tagger
     lingot
-    yabridge
-    yabridgectl
-    wineWow64Packages.stable
     obsidian
     reaper
     reaper-reapack-extension
