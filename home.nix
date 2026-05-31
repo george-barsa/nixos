@@ -69,9 +69,9 @@
 
   programs.git = {
     enable = true;
-    userName = "george-barsa";
-    userEmail = "117371911+george-barsa@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      userName = "george-barsa";
+      userEmail = "117371911+george-barsa@users.noreply.github.com";
       init.defaultBranch = "main";
     };
   };
@@ -144,7 +144,7 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
 }
