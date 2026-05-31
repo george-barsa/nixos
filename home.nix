@@ -19,7 +19,7 @@
     lingot
     yabridge
     yabridgectl
-    wineWowPackages.stable
+    wineWow64Packages.stable
     obsidian
     reaper
     reaper-reapack-extension
