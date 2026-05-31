@@ -64,9 +64,13 @@
 
   programs.git = {
     enable = true;
+
     settings = {
-      userName = "george-barsa";
-      userEmail = "117371911+george-barsa@users.noreply.github.com";
+      user = {
+        name = "george-barsa";
+        email = "117371911+george-barsa@users.noreply.github.com";
+      };
+
       init.defaultBranch = "main";
     };
   };
