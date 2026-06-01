@@ -19,7 +19,6 @@
     reaper
     reaper-reapack-extension
     remmina
-    remmina-plugins-rdp
   ];
 
   programs.bash = {
