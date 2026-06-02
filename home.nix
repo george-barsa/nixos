@@ -16,7 +16,6 @@
     lingot
     obsidian
     reaper
-    moonlight-qt
     freerdp
   ];
 
