@@ -6,7 +6,6 @@
     pkgs.docker
     pkgs.rsync
     pkgs.unzip
-    pkgs.libva-utils
   ];
 
   services.power-profiles-daemon.enable = false;
@@ -210,15 +209,5 @@
   networking.firewall.allowedTCPPorts = [
     2222
     3000
-    47984
-    47989
-    48010
-  ];
-
-  networking.firewall.allowedUDPPorts = [
-    47998
-    47999
-    48000
-    48010
   ];
 }
