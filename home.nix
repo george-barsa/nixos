@@ -9,7 +9,6 @@
     fzf
     nil
     spotify
-    freerdp
     discord
     gimp
     audacity
@@ -17,8 +16,7 @@
     lingot
     obsidian
     reaper
-    reaper-reapack-extension
-    remmina
+    moonlight-qt
   ];
 
   programs.bash = {
