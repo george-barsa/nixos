@@ -6,6 +6,7 @@
     pkgs.docker
     pkgs.rsync
     pkgs.unzip
+    pkgs.libva-utils
   ];
 
   services.power-profiles-daemon.enable = false;
