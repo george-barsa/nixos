@@ -55,6 +55,35 @@
     wantedBy = [ "multi-user.target" ];
   };
 
+  systemd.services.spacetimedb = {
+    description = "SpaceTimeDB Docker Container";
+
+    after = [
+      "network.target"
+      "docker.service"
+    ];
+
+    requires = [
+      "docker.service"
+    ];
+
+    serviceConfig = {
+      Restart = "always";
+
+      ExecStart = ''
+        /run/current-system/sw/bin/docker run \
+          --rm \
+          --name spacetimedb \
+          -p 3001:3001 \
+          clockworklabs/spacetime:latest
+      '';
+
+      ExecStop = "/run/current-system/sw/bin/docker stop spacetimedb";
+    };
+
+    wantedBy = [ "multi-user.target" ];
+  };
+
   systemd.services.gitea-backup = {
     restartIfChanged = false;
     description = "Nightly Gitea backup with incremental OneDrive sync";
@@ -209,5 +238,6 @@
   networking.firewall.allowedTCPPorts = [
     2222
     3000
+    3001
   ];
 }
