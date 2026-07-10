@@ -47,6 +47,7 @@
                 extraSpecialArgs = { 
                   inherit vars;
                   inherit host;
+                  inherit unstable;
                 };            
               };
             }
