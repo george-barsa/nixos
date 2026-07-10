@@ -1,4 +1,4 @@
-{ pkgs, vars,  ... }:
+{ pkgs, unstable, vars,  ... }:
 
 {
   home.username = "${vars.user}";
@@ -17,6 +17,10 @@
     obsidian
     reaper
     freerdp
+  ];
+
+  home.packages = with unstable; [
+    godot
   ];
 
   programs.bash = {
