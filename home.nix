@@ -69,7 +69,7 @@
     settings = {
       user = {
         name = "george-barsa";
-        email = "117371911+george-barsa@users.noreply.github.com";
+        email = ''117371911+george-barsa@users.noreply.github.com'';
       };
 
       init.defaultBranch = "main";
