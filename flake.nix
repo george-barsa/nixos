@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -14,6 +15,7 @@
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
+    unstable = import nixpkgs-unstable { inherit system; };
     vars = {
       user = "george";
     };
