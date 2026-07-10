@@ -57,30 +57,26 @@
 
   systemd.services.spacetimedb = {
     description = "SpaceTimeDB Docker Container";
-
     after = [
       "network.target"
       "docker.service"
     ];
-
     requires = [
       "docker.service"
     ];
-
     serviceConfig = {
       Restart = "always";
-
+      ExecStartPre = "-/run/current-system/sw/bin/docker rm -f spacetimedb";
       ExecStart = ''
         /run/current-system/sw/bin/docker run \
           --rm \
           --name spacetimedb \
           -p 3001:3001 \
-          clockworklabs/spacetime:latest
+          clockworklabs/spacetime:latest \
+          start --listen-addr 0.0.0.0:3001
       '';
-
       ExecStop = "/run/current-system/sw/bin/docker stop spacetimedb";
     };
-
     wantedBy = [ "multi-user.target" ];
   };
 
