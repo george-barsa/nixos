@@ -74,6 +74,25 @@
     };
   };
 
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/id_ed25519_github";
+        identitiesOnly = true;
+      };
+      "192.168.0.101" = {
+        hostname = "192.168.0.101";
+        port = 222;
+        user = "git";
+        identityFile = "~/.ssh/id_ed25519";
+        identitiesOnly = true;
+      };
+    };
+  };
+
   programs.firefox = {
     enable = true;
 
