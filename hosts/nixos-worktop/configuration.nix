@@ -219,12 +219,12 @@
   systemd.timers.gitea-backup = {
     enable = true;
 
-    description = "Run Gitea backup weekly";
+    description = "Run Gitea backup nightly";
 
     wantedBy = [ "timers.target" ];
 
     timerConfig = {
-      OnCalendar = "weekly";
+      OnCalendar = "*-*-* 04:00:00";
       Persistent = true;
     };
   };
