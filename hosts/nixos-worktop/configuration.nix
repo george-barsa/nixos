@@ -66,7 +66,16 @@
     ];
     serviceConfig = {
       Restart = "always";
-      ExecStartPre = "-/run/current-system/sw/bin/docker rm -f spacetimedb";
+      ExecStartPre = [
+        "-/run/current-system/sw/bin/docker rm -f spacetimedb"
+        # Docker auto-creates the bind-mount source as root:root if it
+        # doesn't exist, but the image runs its own process as a non-root
+        # `spacetime` user internally — world-writable so it can write
+        # regardless of that user's in-container uid (single-user host,
+        # not worth chasing the exact uid).
+        "/run/current-system/sw/bin/mkdir -p /home/${vars.user}/Documents/spacetimedb/db /home/${vars.user}/Documents/spacetimedb/keys"
+        "/run/current-system/sw/bin/chmod -R 777 /home/${vars.user}/Documents/spacetimedb"
+      ];
       ExecStart = ''
         /run/current-system/sw/bin/docker run \
           --rm \
