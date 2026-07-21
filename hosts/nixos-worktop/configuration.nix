@@ -72,8 +72,9 @@
           --rm \
           --name spacetimedb \
           -p 3001:3001 \
+          -v /home/${vars.user}/Documents/spacetimedb:/data \
           clockworklabs/spacetime:latest \
-          start --listen-addr 0.0.0.0:3001
+          start --listen-addr 0.0.0.0:3001 --data-dir /data/db --jwt-key-dir /data/keys
       '';
       ExecStop = "/run/current-system/sw/bin/docker stop spacetimedb";
     };
