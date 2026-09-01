@@ -22,6 +22,7 @@
     hosts = [
       "nixos-worktop"
       "nixos-thintop"
+      "nixos-thicktop"
     ];
   in {
     nixosConfigurations = builtins.listToAttrs (
