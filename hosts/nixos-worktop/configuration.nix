@@ -8,6 +8,8 @@
     pkgs.unzip
   ];
 
+  services.openssh.enable = true;
+
   services.power-profiles-daemon.enable = false;
   services.tlp.enable = true;
 
@@ -70,6 +72,7 @@
   networking.firewall.enable = true;
 
   networking.firewall.allowedTCPPorts = [
+    22
     2222
     3000
     3001
