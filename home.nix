@@ -96,8 +96,8 @@
         IdentityFile = "~/.ssh/id_ed25519_github";
         IdentitiesOnly = true;
       };
-      "192.168.0.101" = {
-        HostName = "192.168.0.101";
+      "192.168.0.16" = {
+        HostName = "192.168.0.16";
         Port = 222;
         User = "git";
         IdentityFile = "~/.ssh/id_ed25519";
