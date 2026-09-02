@@ -191,11 +191,7 @@
   };
 
   systemd.timers.gitea-backup = {
-    # Left disabled until the real gitea data has been restored here —
-    # Persistent = true would otherwise fire a catch-up run against an
-    # empty gitea on first boot and overwrite the real OneDrive backup.
-    # Flip to true once gitea is confirmed working with restored data.
-    enable = false;
+    enable = true;
 
     description = "Run Gitea backup nightly";
 
