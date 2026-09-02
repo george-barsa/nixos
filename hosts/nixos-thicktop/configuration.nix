@@ -209,7 +209,12 @@
   # for it (via `nvidia-offload <cmd>`), which matters on battery.
   boot.blacklistedKernelModules = [ "nouveau" ];
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "displaylink" "modesetting" "nvidia" ];
+
+  # Plugable UD-3900 USB3.0 dock (DisplayLink DL-6xxx chipset). The evdi kernel
+  # module and dlm systemd unit come from the "displaylink" videoDriver module,
+  # but that module doesn't enable the unit itself.
+  systemd.services.dlm.wantedBy = [ "multi-user.target" ];
 
   hardware.graphics = {
     enable = true;
