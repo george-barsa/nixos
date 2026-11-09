@@ -17,6 +17,7 @@
     obsidian
     reaper
     freerdp
+    moonlight-qt
   ];
 
   programs.bash = {
